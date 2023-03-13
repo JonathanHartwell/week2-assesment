@@ -35,11 +35,10 @@ const cart = [
 
 //CODE HERE
 
-const cartTotal = (item) => {
-    cart.reduce((i, item) => {return i + item.price}, 0)
-}
+const cartTotal = cart.reduce((acc, curr) => acc + curr.price, 0)
 
-priceTotal(cart)
+console.log(cartTotal)
+
 
 //////////////////PROBLEM 2////////////////////
 /*  
@@ -58,9 +57,11 @@ priceTotal(cart)
 
 //CODE HERE
 
-const calcFinalPrice = () => {
-
+const calcFinalPrice = (cartTotal, couponValue, tax) => {
+    return (cartTotal = cartTotal += tax * cartTotal) - couponValue
 }
+
+console.log(calcFinalPrice(cartTotal, 2, .06))
 
 //////////////////PROBLEM 3////////////////////
 /*  
@@ -85,6 +86,10 @@ const calcFinalPrice = () => {
 /*
     TEXT ANSWER HERE
 
+    For the customer object properties I think name, age, allergies, has children, and drinks alcohol. the final two being booleans.
+
+    name is good for tracking specific customers if needed, allergies are obvoius for food reasons, children to know 
+
 */
 
 /*
@@ -93,3 +98,11 @@ const calcFinalPrice = () => {
 */
 
 //CODE HERE
+
+const customer1 = {
+    name: "Silliam Whatner",
+    age: 70,
+    allergies: 'potato',
+    hasChildren: false,
+    drinksAcohol: true
+}
